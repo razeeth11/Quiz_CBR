@@ -44,6 +44,7 @@ export function LoginTabs() {
 function Login() {
   const navigate = useNavigate();
   const handleLogin = () => {
+    localStorage.setItem("token", "Quiz-App-Logged");
     navigate("/");
   };
 

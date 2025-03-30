@@ -1,6 +1,7 @@
-import { Routes, Route, Navigate } from "react-router";
+import { Routes, Route, Navigate, useNavigate } from "react-router";
 import { Dashboard } from "../Dashboard/Dashboard";
 import { LoginTabs } from "../Login/Login";
+import { useEffect } from "react";
 
 export function JsxRoutes() {
   return (
@@ -8,8 +9,29 @@ export function JsxRoutes() {
       <Routes>
         <Route path="/login" element={<LoginTabs />} />
         <Route path="/signup" element={<LoginTabs />} />
-        <Route path="/" element={<Dashboard />} />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoutes>
+              <Dashboard />
+            </ProtectedRoutes>
+          }
+        />
       </Routes>
     </>
+  );
+}
+
+function ProtectedRoutes({ children }) {
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  useEffect(() => {
+    token === "Quiz-App-Logged" && navigate("/");
+  }, [token, navigate]);
+
+  return token === "Quiz-App-Logged" ? (
+    <div>{children}</div>
+  ) : (
+    <Navigate replace to="/login" />
   );
 }

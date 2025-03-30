@@ -1,3 +1,9 @@
+import { NavBar } from "../NavBar/NavBar";
+
 export function Dashboard() {
-  return <div>dashboard</div>;
+  return (
+    <div>
+      <NavBar />
+    </div>
+  );
 }
