@@ -1,4 +1,4 @@
-import { AlignLeft, Award, Bell } from "lucide-react";
+import { AlignLeft, Award, Bell, Search, Settings2 } from "lucide-react";
 import Logo from "/public/Images/Logo.png";
 import {
   Tooltip,
@@ -9,6 +9,7 @@ import {
 import { MenuBar } from "../MenuBar/MenuBar";
 import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export const navList = [
   {
@@ -23,13 +24,13 @@ export const navList = [
 
 export function NavBar() {
   return (
-    <nav className="bg-gradient-to-r from-[#554cf9] to-[#804cf9cb] py-2.5 px-3 md:px-10">
+    <nav className="bg-gradient-to-r from-[#554cf9] to-[#804cf9cb] py-4 px-3 md:px-10">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2.5 select-none">
           <img
             src={Logo}
             alt="codebyrazeeth-logo"
-            className="w-[45px] pointer-events-none"
+            className="w-[40px] pointer-events-none"
           />
           <h1 className="text-xl font-bold text-white">Quiz - CBR</h1>
         </div>

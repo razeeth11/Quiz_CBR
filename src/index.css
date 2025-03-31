@@ -145,3 +145,7 @@
 .ring-offset-background {
   display: none;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

@@ -2,6 +2,8 @@ import { Routes, Route, Navigate, useNavigate } from "react-router";
 import { Dashboard } from "../Dashboard/Dashboard";
 import { LoginTabs } from "../Login/Login";
 import { useEffect } from "react";
+import { Home } from "../Home/Home";
+import { GeneralKnowledge } from "../Categories/General-Knowledge";
 
 export function JsxRoutes() {
   return (
